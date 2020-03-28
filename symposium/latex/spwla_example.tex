@@ -1,0 +1,215 @@
+\documentclass[10pt,twocolumn,twoside]{article}
+\usepackage{graphicx,xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{bm, bbm} % bold math
+\usepackage{subfigure}
+\usepackage{natbib}
+%\usepackage{mathptmx}
+%\usepackage[labelfont=bf]{caption}
+%\usepackage{epsfig,bm}
+%\usepackage{amsfonts}
+%\usepackage{lipsum}
+%\usepackage{titlesec}
+%\usepackage{titling}
+\usepackage{spwla}
+%\usepackage{showframe}
+%\bibpunct{(}{)}{;}{a}{ }{,}
+%\usepackage[labelfont={bf},justification=RaggedRight,textfont=normal]{caption}
+\usepackage{caption}
+\captionsetup{labelfont=bf,textfont=normal,justification=justified,labelsep=endash,aboveskip=2pt}
+\usepackage[export]{adjustbox}
+%\usepackage[capitalize, nameinlink]{cleveref}
+%\crefdefaultlabelformat{#2\textbf{#1}#3} % <-- Only #1 in \textbf
+%\crefname{figure}{\textbf{Fig.}}{\textbf{Figures}}
+%\Crefname{figure}{\textbf{Fig.}}{\textbf{Figures}}
+%\newcommand{\rs}[1]{\mathstrut\mbox{\scriptsize\rm #1}}
+%\newcommand{\rr}[1]{\mbox{\rm #1}}
+%\newcommand*\mean[1]{\bar{#1}}
+%\newcommand*\tran[1]{\tilde{#1}}
+
+\def\headername{{\color{gray}SPWLA 61$^\textbf{st}$ Annual Logging Symposium, June 20-24, 2020}}
+
+\setcounter{page}{1}
+
+\renewcommand{\thesubfigure}{\thefigure\alph{subfigure}}
+\makeatletter
+   \renewcommand{\p@subfigure}{}
+   \renewcommand{\@thesubfigure}{(\alph{subfigure})\hskip\subfiglabelskip}
+\makeatother
+
+%\setcounter{page}{11}
+
+\newcommand{\Erf}{\operatorname{Erf}}
+\newcommand{\var}{\operatorname{var}}
+\newcommand{\cov}{\operatorname{cov}}
+\def\frech{Fr\'{e}chet\ }
+%
+% for vector symbols; write argument in math and bold
+% can be used inside or outside mathmode
+%
+\newcommand{\vc}[1]{\ensuremath{\mathbf{#1}}}
+%
+% transpose for matrices (math mode only)
+%
+\newcommand{\trp}{^{\text{\scriptsize T}} }
+\newcommand{\itp}{^{-\text{\scriptsize T}} }
+\newcommand{\inv}{^{-1} }
+%
+%  Super- or subscript in roman
+%  in math mode or parmode
+%
+\newcommand{\sbr}[1]{\ensuremath{_{\mathrm{#1}}}}
+\newcommand{\spr}[1]{\ensuremath{^{\mathrm{#1}}}}
+%
+%   Bibliography style
+
+\bibliographystyle{spwla}
+
+
+%****** REFERENCES *************************************************************
+\def\thebibliography#1{\section{References}
+\list
+{\arabic{enumi}.}
+{\settowidth\labelwidth{#1.}\leftmargin\labelwidth
+\advance\leftmargin 0pt \labelsep 5pt \labelwidth 20pt \itemindent -10pt
+\usecounter{enumi}}     \def\newblock{\hskip .11em plus .33em minus -.07em}
+\sloppy \sfcode`\.=1000\relax
+}\let\endthebibliography=\endlist
+
+%
+%   Title
+%
+\title{SPWLA Symposium general instructions for paper manuscript preparation}
+%
+%   Author(s)
+%
+\author{Stephanie Turner and Sharon Johnson, The SPWLA Business Office
+}
+
+% Headers
+\headsep = 0.5 in
+\footskip = 0.15 in
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[RO]{\bf{\headername}}
+\fancyhead[LE]{\bf{\headername}}
+\fancyfoot[C]{\color{gray}\thepage}
+
+\begin{document}
+\thispagestyle{empty}
+%\small                   % 9pt is default size, but there is no 9pt article.
+\twocolumn[\maketitle]   % set the title as one-column, rest two-column.
+%\maketitle
+
+\noindent \parbox[t]{75mm}{ \scriptsize \rmfamily \noindent
+	
+	Copyright 2020, held jointly by the Society of Petrophysicists and Well Log Analysts (SPWLA) and the submitting authors.
+	
+	This paper was prepared for presentation at the SPWLA 61st Annual Logging Symposium held in Banff, Alberta, Canada June 20-24, 2020.	
+}
+\textcolor[rgb]{0.00,0.00,0.00}{\rule{75mm}{0.3mm}}
+
+\fancypagestyle{firststyle}
+{
+	\fancyhf{}
+	\fancyhead[R]{\bf{\headername}}
+	\fancyfoot[C]{\footnotesize \thepage}
+}
+
+\thispagestyle{firststyle}
+
+\section{abstract}
+All papers are to be submitted electronically in Adobe PDF format to Stephanie Turner at stephanie@spwla.org
+
+
+The deadline for paper submission is May 3, 2020 with a draft being due April 12th.
+In the continuing effort to upgrade the quality and appearance of the Transactions Volume, authors are being asked to use a consistent style of page layout, type style (font), and type size as described herein. This Microsoft Word document will also serve as the format template for your paper. All manuscripts must conform to these instructions. Papers that do not conform will be returned to the corresponding author for reformatting.
+
+The Transactions Volume will be published only in digital format.
+
+The guidelines for auditorium and electronic presentations and posters are also given in the Appendix and should be adhered to when applicable.
+
+\section{introduction}
+SPWLA has required electronic submission of Symposium papers since 2004. All papers are to be submitted electronically in Adobe PDF format to Stephanie Turner at stephanie@spwla.org.
+
+The deadline for paper submission is May 3, 2020. Please do not use security coding (passwords) when sending the PDF file. We do recommend that you submit earlier, so that there is time to make any corrections if the committee finds issues with the formatting. A manuscript with formatting issues will be returned for revision if time permits or removed from the program if time does not permit corrections.
+
+The layout of this instruction complies with the Guidelines for Manuscript Preparation and may be used as a template. All manuscripts must conform to these instructions.
+
+\section{general instructions}
+The page size in the file must be US letter (8.5 by 11 inches), in “portrait” layout. Maximum paper length is 25 pages, including all text and figures. Again, we strongly recommend that all figures and tables are embedded in the text, but we realize that in some cases figures may need to follow the text. The extended number of pages allows authors to add images that are easy to read and large enough for clarity
+
+\section{manuscript organization}
+·	Title (centered over both columns)
+·	Author(s) and affiliation(s) (centered over both columns)
+·	Copyright statement
+·	Abstract (maximum 500 words)
+·	Text (including figures and tables)
+·	Conclusions
+·	Acknowledgments, if needed
+·	List of Acronyms
+·	List of Symbols
+·	References
+·	About the Author(s)
+·	Appendix, if needed
+·	Tables, then figures, if not embedded in text columns
+
+\section{page layout}
+Page size. Manuscripts should be formatted for 8 1/2 inches by 11 inches paper. European A4 paper size is not acceptable.
+Margins. Left margin on odd numbered pages should be 1 1/4 inches (30mm), right margin 3/4 inch (20mm); right margin on even numbered pages should be 1 1/4 inches, left margin 3/4 inch. (Microsoft Word: gutter = 0, mirror margins on). Top margin 1 1/4 inch below top edge of paper.
+Columns. Text must be printed in two columns to a page and separated by 0.25 inches. 
+Pages. Maximum paper length is 25 pages, including text and figures. THERE WILL BE NO EXCEPTIONS. A manuscript in excess of 25 pages will be returned for revision if time permits or pulled if time does not permit.
+Page numbering. Center the page number 1/2 inch (12mm) above the bottom of each page.
+Header. All pages must have the following header: “SPWLA 61st Annual Logging Symposium, June 20-24, 2020” This header should be on the right side of odd pages and the left side of even pages, and be in 10-point Bold Times New Roman font (or the closest approximation possible).
+
+\section{type style and size}
+Type style (font). A proportionally spaced, serif font, Times or Times Roman, is preferred. If this is not possible, use the closest approximation available. (This is Times New Roman, 10-point.)
+Type size and line spacing. The main body of the text is single-spaced in 10-point type; line spacing is 12-point (resulting in 6 lines per inch).
+
+HEADINGS
+
+Title. The title should be centered and typed in all capital letters, bold, 14-point, single spaced.
+Headings. These should be on a separate line, left justified, easily distinguished from each other and clearly separated from the main body of the text. Bold upper case 10-point, 12-pitch.
+First-Level Subheadings. Subheadings are subordinate to headings. The first subheading should be on a separate line above the text. Bold, lowercase, 10-point, 12-pitch line spacing.
+Second-Level Subheadings. Any additional subheadings should be on same lines as text. Italics, lowercase, 10-point, 12-pitch line spacing.
+
+CITATIONS
+
+Figures. All figures (graphs, line drawings, photographs, etc.) should be cited in the body of the paper and should be numbered sequentially, see Figure~\ref{fig:logo}. The figures in the text should be labeled as “Figure 1” in bold, 10-point, 12-pitch line spacing.
+Tables. All tables should be cited in the body of the paper. Number the tables sequentially as they appear in the paper and include a caption consisting of the table number and a brief description. Tables should be inserted as part of the text as close to its first reference as possible. The tables should be labeled as “Table 1” in bold, 10-point, 12-pitch line spacing.
+
+\begin{figure}
+	\centering
+	\adjincludegraphics[width=3.125in, trim={{.0
+			\width} {.0\width} {.0\width} {0.0\width}},clip]%
+	{boston_chapter_logo.png}
+	%{Overview_examples_crop.png}
+	\caption{SPWLA Boston Chapter logo.}
+	\label{fig:logo}
+\end{figure}
+
+
+Equations. Equations should be numbered consecutively beginning with (1) throughout the entire paper. The number should be enclosed in parentheses and set flush right in the column on the same line as the equation. It is this number that should be used when referring to equations within the text. Equations should be referenced within the text as “Eq. (x).”
+References. Cite references by author’s last name and year. For two authors write both names, for more than two authors use the format “author1 et al.” Cite all references and include complete information for each citation in "References" section.
+
+REFERENCES
+
+Order. References~\citep{Archie1942} should be listed ALPHABETICALLY by the author’s last name. In case of multiple listings by the same author(s), references are listed by date (earliest first) and then alphabetically. Do not use abbreviations. Form and punctuation shown in the examples below should be observed.
+Format. Author's last name, followed by their initials, year of publication, title of paper or article (capitalize only the first word of the title and any proper nouns), full name of journal (do not underline or use italics), specific volume number shown as Vol. \#, show beginning and ending page numbers. 10-point, 12-pitch line spacing.
+For books (as applicable): edition, volume, series, chapter, pages, full name and location of publisher.
+For journals or other periodicals (as applicable): name of publication, volume, issue, page numbers, DOI (if available).
+For conference papers (as applicable): name, location and date(s) of conference, type of presentation, paper number, DOI (if available). 
+
+For websites: Author or Site Name. YEAR. Title (page or article). Site name, date posted, web address (accessed date). 
+
+A free resource to find the DOI of a paper is https://www.crossref.org/guestquery/ 
+
+
+\section{acknowledgments}
+The authors would like to acknowledge Cosan Ayan, Koksal Cig, Marie Van Steene, Hazim Ayyad, Omer Gurpinar, Mohammed Doghmi, Morten Kristensen, Jichao Chen, and Lalitha Venkataramanan for constructive discussions and suggestions during the development of this work, and supports on the field case studies.
+
+%\vspace*{-0.3in}
+\bibliography{spwla_ref}
+
+\end{document}

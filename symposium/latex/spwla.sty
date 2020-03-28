@@ -1,0 +1,362 @@
+%*******************************************************************************
+%% spwla.sty    (modified from versions cited below)
+%%
+%% Initial version:  02/19/2020, Lin Liang
+%%
+%% SPWLA.STY is Copyright (c) 2020 by Lin Liang
+%%
+%% This file may be freely transmitted and reproduced, but it may not be
+%% changed unless the name is changed also. This notice must remain intact.
+%%
+%*******************************************************************************
+%% spej.sty    (The references and cite sections are from Stanford)
+%%
+%% Initial version:  06/06/2005, Christoph Arns and Lincoln Paterson
+%%
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.2
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%*******************************************************************************
+% If you want to change explicitly to a certain font, use the command
+% \fontfamily{XYZ}\selectfont whereby XYZ can be set to:
+% pag for Adobe AvantGarde,
+% pbk for Adobe Bookman,
+% pcr for Adobe Courier,
+% phv for Adobe Helvetica,
+% pnc for Adobe NewCenturySchoolbook,
+% ppl for Adobe Palatino,
+% ptm for Adobe Times Roman,
+% pzc for Adobe ZapfChancery
+%****** PACKAGES ***************************************************************
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{spwla}
+\usepackage{fancyhdr}                       % header and footer.
+\usepackage{times}                          % times as default roman font.
+\usepackage[scaled]{helvet}                 % Helvetica: default sanserif font.
+\usepackage[T1]{fontenc}                    % TrueType scalable fonts.
+\usepackage{textcomp}                       % font selection.
+%\usepackage{pslatex}                        % standard postscript fonts.
+\usepackage{setspace}                       % change line spacing in regions.
+\usepackage{booktabs}                       % additional macros for tables.
+\usepackage{tabularx}                       % tables with fixed with argument.
+\usepackage{xparse}
+
+%****** SPE FIELDS *************************************************************
+%\setlength{\oddsidemargin}{-.5in} \setlength{\evensidemargin}{-.5in}
+\setlength{\oddsidemargin}{.25in} \setlength{\evensidemargin}{-.25 in}
+\setlength{\topmargin}{-0.4 in}
+%\setlength{\textheight}{240mm}
+\setlength{\textheight}{9in}
+%\setlength{\textheight}{230mm}
+%\setlength{\textwidth}{186mm}
+\setlength{\textwidth}{6.5in}
+%\setlength{\textwidth}{158mm}
+\marginparwidth 0pt
+\marginparsep 10pt
+%\columnsep 12pt
+\columnsep 0.25 in
+\columnwidth 3.125 in
+%\parindent 0.32cm
+\parindent 0cm
+%\parskip   0pt
+\parskip   8pt
+\setlength{\itemsep}{.5pt} \setlength{\parsep}{0pt}
+%\pagestyle{fancyplain}\fancyhead{}\fancyfoot{}
+\pagestyle{fancy} \lhead[\small \thepage]{\small }
+\rhead[\small ]{\small \thepage} \cfoot{}
+\renewcommand{\headrulewidth}{1pt}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand{\baselinestretch}{.9}
+%****** SECTION ****************************************************************
+\renewcommand{\section}{
+  \@startsection%
+      {section}%                            % the name.
+      {1}%                                  % the level.
+      {0pt}%                                % the indent.
+      {-5pt}%                              % the beforeskip.
+      {5pt}%                                % the afterskip.
+      {\fontsize{12}{12} \fontencoding{T1}\fontfamily{phv}%   % the style.
+        \scshape \rmfamily \bfseries}
+}
+%\renewcommand{\section}{\@startsection 
+%	{section}%        % the name.
+%	{1}%			% the level.
+%	{0pt}%
+%        {-5pt}%                              % the beforeskip.
+%        {5pt}%                                % the afterskip.
+%        {\fontencoding{T1}\fontfamily{phv}\scshape\fontseries{bx}\selectfont\bfseries}}
+
+%***** SUB-SECTIONS ************************************************************
+\renewcommand{\subsection}{
+  \@startsection%
+      {subsection}%                         % the name.
+      {2}%                                  % the level.
+      {0pt}%                                % the indent.
+      {-5pt}%                               % the beforeskip.
+      {1pt}%                                % the afterskip.
+      {\bfseries}%                          % the style.
+}
+\let\oldsubsection\subsection               % add a point.
+\renewcommand{\subsection}[2]{\oldsubsection{#1. }{#2}}
+%***** SUB-SUB-SECTIONS ********************************************************
+\renewcommand{\subsubsection}{
+  \@startsection%
+      {subsubsection}%                      % the name.
+      {3}%                                  % the level.
+      {12pt}%                               % the indent.
+      {0pt}%                                % the beforeskip.
+      {0pt}%                                % the afterskip.
+      {\itshape \small}}%                   % the style.
+
+\let\oldsubsubsection\subsubsection         % add a point.
+\renewcommand{\subsubsection}[2]{\oldsubsubsection{#1. }{#2}}
+%***** COUNTERS ****************************************************************
+\pagenumbering{arabic}
+\setcounter{secnumdepth}{-1}       %*****FLOATS*********************************
+\setcounter{topnumber}{4}          % max number of floats at top.
+\setcounter{bottomnumber}{4}       % max number of floats at bottom.
+\setcounter{totalnumber}{10}       % max number of floats on page.
+%***** FLOATS ******************************************************************
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.1}
+\renewcommand{\floatpagefraction}{.7}
+\renewcommand{\dblfloatpagefraction}{.0}
+\setlength{\floatsep}{8pt}
+\setlength{\textfloatsep}{10pt}
+%****** REFERENCES *************************************************************
+%\def\thebibliography#1{\section{References\@mkboth{References}{References}}
+%\list
+%{\arabic{enumi}.}     {\settowidth\labelwidth{#1.}\leftmargin\labelwidth
+%\advance\leftmargin 0pt \labelsep 5pt \labelwidth 20pt
+%\usecounter{enumi}}     \def\newblock{\hskip .11em plus .33em minus -.07em}
+%\sloppy \sfcode`\.=1000\relax
+%}\let\endthebibliography=\endlist
+%%******* CITE-Superscript ******************************************************
+%\def\@cite#1#2{\raise.5ex\hbox{\scriptsize #1}}
+%\def\@citex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+%\def\@citea{}\@cite{\@for\@citeb:=#2\do
+%{\@citea\def\@citea{{\scriptsize ,}}\@ifundefined
+%{b@\@citeb}{{\bfseries ?}\@warning
+%{Citation `\@citeb' on page \thepage \space undefined}}%
+%{\csname b@\@citeb\endcsname}}}{#1}}
+%******* CAPTIONS **************************************************************
+% set caption in 10pt Times bold with 6pt skip above and below.
+%\let\oldcaption\caption
+%\renewcommand{\caption}{\oldcaption }
+%\renewcommand{\abovecaptionskip}{6pt}
+%\renewcommand{\belowcaptionskip}{6pt}
+%\makeatletter
+%\long\def\@makecaption#1#2{%
+%  \vskip\abovecaptionskip
+%  \fontencoding{T1}\fontfamily{phv}\rmfamily
+%  \sbox\@tempboxa{#1---#2}%
+%  \ifdim \wd\@tempboxa >\hsize
+%    #1---#2\par
+%  \else
+%    \global \@minipagefalse
+%    \hb@xt@\hsize{\box\@tempboxa\hfil}%
+%  \fi
+%  \vskip\belowcaptionskip}
+%\makeatother
+
+
+%%******* FIGURE CAPTION ********************************************************
+%\renewcommand{\figurename}{Figure}
+%%******* TABLES ****************************************************************
+%\tabcolsep 6pt
+%\setcounter{table}{0}
+%\makeatletter
+%%
+%\newcommand{\tabcaption}[2]{
+%  { \linespread{1}\normalsize\scriptsize%          % font size.
+%    \fontencoding{T1}\fontfamily{phv} \selectfont %  % font type.
+%    \sbox\@tempboxa{#2}
+%    \setlength\@tempdima{\wd\@tempboxa}
+%    \setlength\@tempdimb{\@tempdima}
+%    \addtolength{\@tempdimb}{-2\tabcolsep}
+%    \begin{center}
+%      {\setlength{\fboxsep}{0pt}
+%    %\vspace{6pt}
+%    \framebox[\@tempdima][c]{
+%      \begin{minipage}[htb]{\@tempdima}
+%        \vspace{3pt}\hspace{\tabcolsep}{\parbox{\@tempdimb}
+%          {\bfseries\centering
+%        \fontencoding{T1}\fontfamily{phv} \selectfont 
+%        TABLE \arabic{table}---#1}}\vspace{3pt}
+%        \hrule\vspace{3pt}
+%             {#2}
+%      \end{minipage}
+%    }
+%      }
+%    \end{center}
+%  }
+%  \stepcounter{table}
+%}
+%\makeatother
+%\newcommand{\spetab}[2]{\tabcaption{#1}{#2}}
+%\makeatletter
+%%\renewenvironment{table}
+%%   {\@float{table}
+%%     %\linespread{1}\normalsize\scriptsize%          % font size.
+%%     \linespread{1}\normalsize\small%               % font size.
+%%     \fontencoding{T1}\fontfamily{phv}\selectfont%  % font type.
+%%   }
+%%   {\end@float}
+%\makeatother
+%\makeatletter
+%\renewenvironment{table*}
+%   {\@dblfloat{table}
+%     %\linespread{1}\normalsize\scriptsize%          % font size.
+%     \linespread{1}\normalsize\small%               % font size.
+%     \fontencoding{T1}\fontfamily{phv}\selectfont%  % font type.
+%   }
+%   {\end@dblfloat}
+%\makeatother
+%******* TITLE *****************************************************************
+\makeatletter
+\def\maketitle{%
+%\begin{figure}
+%\flushright\vspace{-0.35in}
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[width=1.75in]{SPEInt.eps}\\
+%%  \caption{}\label{}
+%\end{figure}
+%  %\null
+%  \vfill
+%\noindent {\sffamily \Large  \textbf{SPE-187193-MS}\bigskip}\\
+
+  \noindent
+  \begin{center}\leavevmode
+    % use scalable TrueType fonts (Avantgarde).
+    %{\sffamily \Large \textbf{\@title}\par \smallskip}%
+    {\rmfamily \Large  \textbf{\MakeUppercase{\@title}}\par \smallskip}%
+    %{\sffamily \Large  \textbf{\@title}\par \smallskip}%
+\bigskip
+\noindent
+    {\noindent \rmfamily \selectfont
+     \@author\par}%}%}
+  \end{center}%
+ % \vfill
+  %\null
+\bigskip
+
+%\noindent \parbox[t]{186mm}{ \scriptsize \sffamily \noindent
+
+%\noindent Copyright 2020, held jointly by the Society of Petrophysicists and Well Log Analysts (SPWLA) and the submitting authors.
+%This paper was prepared for presentation at the SPWLA 61st Annual Logging Symposium held in Banff, Alberta, Canada June 20-24, 2020.
+
+%\medskip}
+
+%\smallskip
+
+%%{\noindent \textcolor[rgb]{0.00,0.00,1.00}{\hrulefill}}
+%\noindent \textcolor[rgb]{0.00,0.37,0.73}{\rule{186mm}{1.5mm}}
+  }
+\makeatother
+%******* FOOTNOTES *************************************************************
+\footnotesep 9pt
+\font\footnotefont=phvr at 6pt
+\makeatletter
+\renewcommand\footnoterule{%
+  \vskip 9pt\hrule\@width.4\columnwidth}
+\renewcommand\@makefnmark{\relax}%                       % remove footnote mark.
+\renewcommand{\@makefntext}[1]{%
+  \noindent{\@makefnmark}{%
+    \scriptsize%                                         % set footnote with
+    %\fontencoding{T1}\fontfamily{phv}\selectfont        % Helvetica font.
+    \begin{spacing}{.6667}
+    \footnotefont%
+    #1
+  \end{spacing}}%
+}
+\makeatother
+%******* BIOGRAPHY *************************************************************
+\newcommand{\biography}[2]{%
+  {\footnotesize\bfseries\fontencoding{T1}\fontfamily{pag}\selectfont{#1} }%
+  {\footnotesize\fontencoding{T1}\fontfamily{pag}\selectfont{#2}}
+}
+%******* EQUATIONS *************************************************************
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% This is file `dotseqn.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% dotseqn.dtx  (with options: `package')
+%%
+%% D O T S E Q N . S T Y is Copyright (c) 1995 by Donald Arseneau
+%%
+%% This file may be freely transmitted and reproduced, but it may not be
+%% changed unless the name is changed also. This notice must remain intact.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\makeatletter
+%\newcommand\EqnDots{\;\;\leaders\hbox{\kern4\p@\!\!\!\!.\kern4\p@}\hfill}
+%\@ifundefined{mathindent}{\newdimen\mathindent \mathindent\leftmargini}{}
+%\renewcommand{\[}{\relax \ifmmode\@badmath \else
+% \begin{trivlist}%
+%  \@beginparpenalty\predisplaypenalty \@endparpenalty\postdisplaypenalty
+%  \item[]\leavevmode \hbox to\linewidth\bgroup $\m@th\displaystyle %$
+%  \hskip\mathindent\bgroup
+% \fi}
+%\renewcommand{\]}{\relax\ifmmode \egroup $\hfil% $
+%    \egroup \end{trivlist}%
+%  \else \@badmath \fi}
+%\renewenvironment{equation}%
+% {\@beginparpenalty\predisplaypenalty \@endparpenalty\postdisplaypenalty
+%     \refstepcounter{equation}\trivlist \item[]\leavevmode
+%       \hbox to\linewidth\bgroup $\m@th% $
+%         \displaystyle \hskip\mathindent}%
+% {$\hfil % $   Replace `\hfil' with dotted leaders `\EqnDots'.
+%     \displaywidth\linewidth\hbox{\@eqnnum}\egroup \endtrivlist}
+%\renewenvironment{eqnarray}{%
+%   \stepcounter{equation}%
+%   \def\@currentlabel{\p@equation\theequation}%
+%   \global\@eqnswtrue \m@th \global\@eqcnt\z@  \tabskip\mathindent
+%   \let\\\@eqncr \setlength\abovedisplayskip\topsep
+%   \ifvmode \addtolength\abovedisplayskip\partopsep \fi
+%   \addtolength\abovedisplayskip\parskip
+%   \setlength\belowdisplayskip\abovedisplayskip
+%   \setlength\belowdisplayshortskip\abovedisplayskip
+%   \setlength\abovedisplayshortskip\abovedisplayskip
+%   $$\everycr{}\halign to\linewidth% $$
+%   \bgroup
+%     \hskip\@centering
+%     $\displaystyle\tabskip\z@skip{##}$\@eqnsel&%
+%     \global\@eqcnt\@ne \hfil${\DEQ@acs##\DEQ@acs}$\hfil&%
+%     \global\@eqcnt\tw@ $\displaystyle{##}$\hskip\@centering\cr%
+% }% end of "\begin" part
+% {\@@eqncr
+%   \noalign{% vertical skip up to overlay phantom line
+%      \penalty\@M \vskip-\prevdepth
+%      \edef\@tempa{\omit\span\omit\span\omit   % span three columns
+%        \vrule\@depth\the\prevdepth \@width\z@ % strut of proper depth
+%        \kern-\mathindent \kern\linewidth}%    % full line width
+%      \nointerlineskip \expandafter % use saved |\@tempa| outside group
+%   }\@tempa\cr
+%   \egroup
+%   \global\advance\c@equation\m@ne$$% $$
+%   \global\@ignoretrue
+% }
+%\def\@@eqncr{\let\reserved@a\@empty
+%   \ifcase\@eqcnt \def\reserved@a{& &}\or \def\reserved@a{&}\fi
+%   \reserved@a
+%   \if@eqnsw \egroup $\hfil \@eqnnum $\bgroup \stepcounter{equation}%	
+%   %\if@eqnsw \egroup $\EqnDots \@eqnnum $\bgroup \stepcounter{equation}%
+%   \fi \global\@eqnswtrue\global\@eqcnt\z@\cr}
+%\def\DEQ@acs{\hskip\tw@\arraycolsep}
+%\DeclareOption{leftjust}{\let\@eqnsel\hfil}
+%\DeclareOption{nocolsep}{\let\DEQ@acs\null}
+%\ProcessOptions
+%\endinput
+%\makeatother
+%%
+%% End of file `dotseqn.sty'.
+%*******************************************************************************
