@@ -1,5 +1,6 @@
 \documentclass[10pt,twocolumn,twoside]{article}
 \usepackage{graphicx,xcolor}
+\usepackage{wrapfig}
 \usepackage{amsmath}
 \usepackage{amssymb}
 %\usepackage{bm, bbm} % bold math
@@ -27,8 +28,14 @@
 %\newcommand{\rr}[1]{\mbox{\rm #1}}
 %\newcommand*\mean[1]{\bar{#1}}
 %\newcommand*\tran[1]{\tilde{#1}}
+%use below 4 rows to avoid hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 
-\def\headername{{\color{gray}SPWLA 61$^\textbf{st}$ Annual Logging Symposium, June 20-24, 2020}}
+%\def\headername{{\color{gray}SPWLA 61$^\textbf{st}$ Annual Logging Symposium, June 20-24, 2020}}
+\def\headername{{SPWLA 61$^\textbf{st}$ Annual Logging Symposium, June 20-24, 2020}}
 
 \setcounter{page}{1}
 
@@ -124,6 +131,7 @@ All papers are to be submitted electronically in Adobe PDF format to Stephanie T
 
 
 The deadline for paper submission is May 3, 2020 with a draft being due April 12th.
+
 In the continuing effort to upgrade the quality and appearance of the Transactions Volume, authors are being asked to use a consistent style of page layout, type style (font), and type size as described herein. This Microsoft Word document will also serve as the format template for your paper. All manuscripts must conform to these instructions. Papers that do not conform will be returned to the corresponding author for reformatting.
 
 The Transactions Volume will be published only in digital format.
@@ -142,41 +150,63 @@ The page size in the file must be US letter (8.5 by 11 inches), in “portrait�
 
 \section{manuscript organization}
 ·	Title (centered over both columns)
+
 ·	Author(s) and affiliation(s) (centered over both columns)
+
 ·	Copyright statement
+
 ·	Abstract (maximum 500 words)
+
 ·	Text (including figures and tables)
+
 ·	Conclusions
+
 ·	Acknowledgments, if needed
+
 ·	List of Acronyms
+
 ·	List of Symbols
+
 ·	References
+
 ·	About the Author(s)
+
 ·	Appendix, if needed
+
 ·	Tables, then figures, if not embedded in text columns
 
 \section{page layout}
 Page size. Manuscripts should be formatted for 8 1/2 inches by 11 inches paper. European A4 paper size is not acceptable.
+
 Margins. Left margin on odd numbered pages should be 1 1/4 inches (30mm), right margin 3/4 inch (20mm); right margin on even numbered pages should be 1 1/4 inches, left margin 3/4 inch. (Microsoft Word: gutter = 0, mirror margins on). Top margin 1 1/4 inch below top edge of paper.
+
 Columns. Text must be printed in two columns to a page and separated by 0.25 inches. 
+
 Pages. Maximum paper length is 25 pages, including text and figures. THERE WILL BE NO EXCEPTIONS. A manuscript in excess of 25 pages will be returned for revision if time permits or pulled if time does not permit.
+
 Page numbering. Center the page number 1/2 inch (12mm) above the bottom of each page.
+
 Header. All pages must have the following header: “SPWLA 61st Annual Logging Symposium, June 20-24, 2020” This header should be on the right side of odd pages and the left side of even pages, and be in 10-point Bold Times New Roman font (or the closest approximation possible).
 
 \section{type style and size}
 Type style (font). A proportionally spaced, serif font, Times or Times Roman, is preferred. If this is not possible, use the closest approximation available. (This is Times New Roman, 10-point.)
+
 Type size and line spacing. The main body of the text is single-spaced in 10-point type; line spacing is 12-point (resulting in 6 lines per inch).
 
-HEADINGS
+\section{headings}
 
 Title. The title should be centered and typed in all capital letters, bold, 14-point, single spaced.
+
 Headings. These should be on a separate line, left justified, easily distinguished from each other and clearly separated from the main body of the text. Bold upper case 10-point, 12-pitch.
+
 First-Level Subheadings. Subheadings are subordinate to headings. The first subheading should be on a separate line above the text. Bold, lowercase, 10-point, 12-pitch line spacing.
+
 Second-Level Subheadings. Any additional subheadings should be on same lines as text. Italics, lowercase, 10-point, 12-pitch line spacing.
 
-CITATIONS
+\section{citations}
 
 Figures. All figures (graphs, line drawings, photographs, etc.) should be cited in the body of the paper and should be numbered sequentially, see Figure~\ref{fig:logo}. The figures in the text should be labeled as “Figure 1” in bold, 10-point, 12-pitch line spacing.
+
 Tables. All tables should be cited in the body of the paper. Number the tables sequentially as they appear in the paper and include a caption consisting of the table number and a brief description. Tables should be inserted as part of the text as close to its first reference as possible. The tables should be labeled as “Table 1” in bold, 10-point, 12-pitch line spacing.
 
 \begin{figure}
@@ -191,25 +221,110 @@ Tables. All tables should be cited in the body of the paper. Number the tables s
 
 
 Equations. Equations should be numbered consecutively beginning with (1) throughout the entire paper. The number should be enclosed in parentheses and set flush right in the column on the same line as the equation. It is this number that should be used when referring to equations within the text. Equations should be referenced within the text as “Eq. (x).”
+
 References. Cite references by author’s last name and year. For two authors write both names, for more than two authors use the format “author1 et al.” Cite all references and include complete information for each citation in "References" section.
 
-REFERENCES
+\section{references}
 
 Order. References~\citep{Archie1942} should be listed ALPHABETICALLY by the author’s last name. In case of multiple listings by the same author(s), references are listed by date (earliest first) and then alphabetically. Do not use abbreviations. Form and punctuation shown in the examples below should be observed.
+
 Format. Author's last name, followed by their initials, year of publication, title of paper or article (capitalize only the first word of the title and any proper nouns), full name of journal (do not underline or use italics), specific volume number shown as Vol. \#, show beginning and ending page numbers. 10-point, 12-pitch line spacing.
+
 For books (as applicable): edition, volume, series, chapter, pages, full name and location of publisher.
+
 For journals or other periodicals (as applicable): name of publication, volume, issue, page numbers, DOI (if available).
+
 For conference papers (as applicable): name, location and date(s) of conference, type of presentation, paper number, DOI (if available). 
 
 For websites: Author or Site Name. YEAR. Title (page or article). Site name, date posted, web address (accessed date). 
 
 A free resource to find the DOI of a paper is https://www.crossref.org/guestquery/ 
 
+\section{“about the author” section}
+Each author should include a biographical sketch. These should be in the same order as the author listing at the beginning of the paper. Quality photos are encouraged, provided the overall length of the article does not exceed 25 pages.
+
+\section{artwork preparation}
+Identification and captioning. All figures should be identified by a number (“Figure 1”) in bold 10-point font. Number all figures in sequential order and follow with a brief but descriptive caption. 
+
+Location. Illustrations should be placed within the body of text if at all possible (see Figure 1 below), but it is recognized that in certain cases it will be necessary to place them at the end of the paper.
+
+Multiple figures per page. Authors are responsible for arranging multiple figures on each page within the columns where appropriate, or if it is not possible, then at the end of the paper. All lettering must be legible.
+
+Figures resolution. Authors are encouraged to produce high resolution figures before they are inserted in the paper. We recommend illustrations at a resolution of at least 300 dots per inch (dpi) but 600 is preferred. Several petrophysical and scientific software packages already produce high resolution figures. However, a graphics-editing application may be helpful for preparing illustrations. 
+
+\section{use of color}
+Use of color in digital Transactions Volume. The Transactions Volume will include the pdf files, with figures exactly as submitted by the author. Figures may be in color or in black and white at the author’s discretion. However, the author should perform a test print in black and white to ensure legibility, as many readers will print the paper in black and white. 
+
+\section{commercial advertising}
+Logos. Commercial (Company) logos are not to be used in manuscripts.  Manuscripts will be rejected if company logos are present. 
+
+Proprietary names. Generic names should be used instead of proprietary tool or program names. However, there might be cases where a trademark is unavoidable, it can only be used once and identified as such.
+
+Please remember that the goal of the Symposium is to promote technical advancement and exchange. Accordingly, commercially oriented papers are strongly discouraged.
+
+\section{permission/copyright}
+The author is responsible for obtaining permission to use previously published material. A signed letter of permission from the copyright holder must be submitted to the SPWLA Business Office by mail to SPWLA, 8866 Gulf Freeway, Suite 320, Houston, TX 77017). Alternatively, a scan of the executed document may be emailed to stephanie@spwla.org 
+
+The copyright document can be found at www.spwla2020.com/ 
+
+\section{changes and additions}
+Please, re-submit a paper to Stephanie Turner at stephanie@spwla.org if changes are needed after the original submission. No changes or additions will be accepted after the May 3, 2020 deadline.
+
+\section{summary}
+We continue our commitment to provide a high-quality Transactions Volume. Please address any suggestions for improvement to Stephanie Turner at the SPWLA Business Office (stephanie@spwla.org) or Michael O’Keefe SPWLA Vice President Technology 
+vp-technology@spwla.org
+
+Thank you for your cooperation.
+
+\section{APPENDIX: PRESENTATIONS AUDITORIUM AND E-POSTERS}
+
+\section{GUIDELINES FOR AUDITORIUM PRESENTATIONS AT THE 2020 SPWLA SYMPOSIUM}
+
+Equipment. All oral presentations will be made from a computer projector using PowerPoint® 2010, 2013, or 2016. 
+
+A PowerPoint® template is provided here www.spwla2020.com  for the 2019 Annual Symposium. 
+
+The Speakers' Preparation Center will provide a computer for speakers to verify their presentations (to ensure that all graphics run correctly on the version of PowerPoint® used on the Symposium computer.  
+
+In order to ensure that the symposium runs smoothly, Auditorium presentations are due on June 10, 2020. Presentations which are not received by that time will be deleted from the program. Please submit your file to Stephanie Turner at stephanie@spwla.org by June 10, 2020. 
+
+To ease organization of the files, please, name your file starting with the abstract number assigned to you.
+
+Text must be legible. Please make every effort to make your figures legible from the back of a large room. The font size should be between 18- and 32-point with 16-point as a minimum. Exceptions only made to footnotes or references. Do not overcrowd your slide. Engage your audience with compelling figures, avoid extended text, refer them to the paper for details.
+
+Logs must be legible. Presentation of logs has, in the past, attracted much criticism, as symposium attendees cannot see the information in a clear manner. If you must show logs, please make every effort to make them clear and legible. It is acceptable to use the full space of the slide for logs but make sure that text from the template is not run over.
+
+Avoid commercialism. The objective is to inform the audience, not to promote a specific service. Therefore, please avoid excessive use of trademarks, commercial service names and names of employers. Generally, company logos may appear on the title slide for the authors' affiliation, but should not appear thereafter in the presentation. The only exception to this rule is in the acknowledgment slide when the work presented has been sponsored by multiple companies (common for universities joint industry projects). Required copyright notices or unique slide ID numbers may be placed in small typeface in the lower comer of each slide but should not include repetitive logos.
+
+\section{GUIDELINES FOR E-POSTER PREPARATION AT THE 2019 SPWLA SYMPOSIUM.}
+All electronic presentations will be made from a computer projector using PowerPoint® 2010, 2013, or 2016. 
+
+A PowerPoint® template is provided at www.spwla2020.com for the 2019 Annual Symposium which must be used.
+
+Set up/programming is required to have the kiosks running smoothly; therefore, the e-posters are due a few weeks before the symposium. The deadline for e-poster submission is June 10, 2020. Please submit your file to Stephanie Turner at stephanie@spwla.org by June 10 2020. 
+
+Equipment.  E-Poster will be PowerPoint® presentations shown in digital kiosks. Each kiosk consists of a 55-inch plasma screen which is displayed in landscape format. 
+
+Ten to fifteen interactive screens will be available for the viewer to view the e-posters at any time throughout the conference
+
+Display time. All authors are required to be at their various electronic presentation sessions according to the technical program, which will be finalized in June 2020. E-Posters remain up for the duration of the Symposium and will be deleted at the close of the conference on June 24th. 
+
+E-Poster stand location.  E-Poster stands will be located in a mezzanine near the exhibition area. You will be informed which screen is assigned to your presentation when the program is finalized in June.
+
+Avoid commercialism.  The objective should be to inform the audience rather than to promote a specific service. Please avoid excessive use of trademarks, commercial service names and names of employers. Generally, company logos may appear with the title or the authors’ affiliations, but should not appear thereafter in the presentation. The only exception to this rule is in the acknowledgment slide when the work presented has been sponsored by multiple companies (common for universities joint industry projects). Required copyright notices may be placed in small typeface in the lower corner of each slide but should not include repetitive logos.
+
 
 \section{acknowledgments}
-The authors would like to acknowledge Cosan Ayan, Koksal Cig, Marie Van Steene, Hazim Ayyad, Omer Gurpinar, Mohammed Doghmi, Morten Kristensen, Jichao Chen, and Lalitha Venkataramanan for constructive discussions and suggestions during the development of this work, and supports on the field case studies.
+The authors would like to acknowledge ...
 
 %\vspace*{-0.3in}
 \bibliography{spwla_ref}
+
+\section{about the authors}
+\begin{wrapfigure}{l}{0.33\linewidth}
+	\includegraphics[width=1.0\linewidth]{boston_chapter_logo.png}
+\end{wrapfigure}
+\textbf{SPWLA} is a Non-Profit corporation founded in 1959. Dedicated to the advancement of petrophysics focusing on log and core measurements, formation evaluation techniques,
+hydrocarbon, mineral and water resources.
 
 \end{document}
