@@ -9,5 +9,7 @@ This folder contains latex template for SPWLA Symposium manuscript.
 
 Recommend to use MiKTeX and TeXstudio to edit and compile.
 
+Contributors: Lin Liang, Chang-Yu Hou
+
 ### word
 This folder contains word template for SPWLA Symposium manuscript.
