@@ -1,5 +1,6 @@
 # templates
 This repo contains a collection of templates for SPWLA society.
+Contact: VP-InfoTech@spwla.org
 
 ## symposium
 This folder contains templates for SPWLA Symposium manuscript in Latex and Word.
