@@ -3,9 +3,11 @@
 \usepackage{wrapfig}
 \usepackage{amsmath}
 \usepackage{amssymb}
-%\usepackage{bm, bbm} % bold math
+\usepackage{bm, bbm} % bold math
 \usepackage{subfigure}
 \usepackage{natbib}
+\usepackage{enumitem}
+\usepackage{float}
 %\usepackage{mathptmx}
 %\usepackage[labelfont=bf]{caption}
 %\usepackage{epsfig,bm}
@@ -18,24 +20,27 @@
 %\bibpunct{(}{)}{;}{a}{ }{,}
 %\usepackage[labelfont={bf},justification=RaggedRight,textfont=normal]{caption}
 \usepackage{caption}
-\captionsetup{labelfont=bf,textfont=normal,justification=justified,labelsep=endash,aboveskip=2pt}
+%\captionsetup{labelfont=bf,textfont=normal,justification=justified,labelsep=endash,aboveskip=2pt}
+\captionsetup{labelfont=bf,textfont=normal,justification=justified,aboveskip=2pt}
 \usepackage[export]{adjustbox}
-%\usepackage[capitalize, nameinlink]{cleveref}
-%\crefdefaultlabelformat{#2\textbf{#1}#3} % <-- Only #1 in \textbf
-%\crefname{figure}{\textbf{Fig.}}{\textbf{Figures}}
-%\Crefname{figure}{\textbf{Fig.}}{\textbf{Figures}}
+\usepackage[capitalize, nameinlink]{cleveref}
+\crefdefaultlabelformat{#2\textbf{#1}#3} % <-- Only #1 in \textbf
+\crefname{figure}{\textbf{Figure}}{\textbf{Figures}}
+\Crefname{figure}{\textbf{Figure}}{\textbf{Figures}}
+\crefname{table}{\textbf{Table}}{\textbf{Tables}}
+\Crefname{table}{\textbf{Table}}{\textbf{Tables}}
 %\newcommand{\rs}[1]{\mathstrut\mbox{\scriptsize\rm #1}}
 %\newcommand{\rr}[1]{\mbox{\rm #1}}
 %\newcommand*\mean[1]{\bar{#1}}
 %\newcommand*\tran[1]{\tilde{#1}}
 %use below 4 rows to avoid hyphenation
-\tolerance=1
-\emergencystretch=\maxdimen
-\hyphenpenalty=10000
-\hbadness=10000
+%\tolerance=1
+%\emergencystretch=\maxdimen
+%\hyphenpenalty=10000
+%\hbadness=10000
 
 %\def\headername{{\color{gray}SPWLA 61$^\textbf{st}$ Annual Logging Symposium, June 20-24, 2020}}
-\def\headername{{SPWLA 61$^\textbf{st}$ Annual Logging Symposium, June 20-24, 2020}}
+\def\headername{{SPWLA 61$^\textbf{st}$ Annual Logging Symposium, June 24 to July 29, 2020}}
 
 \setcounter{page}{1}
 
@@ -113,7 +118,7 @@
 	
 	Copyright 2020, held jointly by the Society of Petrophysicists and Well Log Analysts (SPWLA) and the submitting authors.
 	
-	This paper was prepared for presentation at the SPWLA 61st Annual Logging Symposium held in Banff, Alberta, Canada June 20-24, 2020.	
+	This paper was prepared for the SPWLA 61st Annual Logging Symposium held online over 6 sessions, every Wednesday from June 24 to July 29, 2020.
 }
 \textcolor[rgb]{0.00,0.00,0.00}{\rule{75mm}{0.3mm}}
 
@@ -205,9 +210,9 @@ Second-Level Subheadings. Any additional subheadings should be on same lines as 
 
 \section{citations}
 
-Figures. All figures (graphs, line drawings, photographs, etc.) should be cited in the body of the paper and should be numbered sequentially, see Figure~\ref{fig:logo}. The figures in the text should be labeled as “Figure 1” in bold, 10-point, 12-pitch line spacing.
+Figures. All figures (graphs, line drawings, photographs, etc.) should be cited in the body of the paper and should be numbered sequentially, see~\cref{fig:logo}. The figures in the text should be labeled as “\textbf{Figure 1}” in bold, 10-point, 12-pitch line spacing.
 
-Tables. All tables should be cited in the body of the paper. Number the tables sequentially as they appear in the paper and include a caption consisting of the table number and a brief description. Tables should be inserted as part of the text as close to its first reference as possible. The tables should be labeled as “Table 1” in bold, 10-point, 12-pitch line spacing.
+Tables. All tables should be cited in the body of the paper. Number the tables sequentially as they appear in the paper and include a caption consisting of the table number and a brief description. Tables should be inserted as part of the text as close to its first reference as possible. The tables should be labeled as “\textbf{Table 1}” in bold, 10-point, 12-pitch line spacing.
 
 \begin{figure}
 	\centering
@@ -244,9 +249,9 @@ A free resource to find the DOI of a paper is https://www.crossref.org/guestquer
 Each author should include a biographical sketch. These should be in the same order as the author listing at the beginning of the paper. Quality photos are encouraged, provided the overall length of the article does not exceed 25 pages.
 
 \section{artwork preparation}
-Identification and captioning. All figures should be identified by a number (“Figure 1”) in bold 10-point font. Number all figures in sequential order and follow with a brief but descriptive caption. 
+Identification and captioning. All figures should be identified by a number (“\textbf{Figure 1}”) in bold 10-point font. Number all figures in sequential order and follow with a brief but descriptive caption. 
 
-Location. Illustrations should be placed within the body of text if at all possible (see Figure 1 below), but it is recognized that in certain cases it will be necessary to place them at the end of the paper.
+Location. Illustrations should be placed within the body of text if at all possible, but it is recognized that in certain cases it will be necessary to place them at the end of the paper.
 
 Multiple figures per page. Authors are responsible for arranging multiple figures on each page within the columns where appropriate, or if it is not possible, then at the end of the paper. All lettering must be legible.
 
@@ -322,6 +327,8 @@ The authors would like to acknowledge ...
 \makebox[1.5cm][l]{$rhom$}  Mud density, kg/m$^3$
 
 \bibliography{spwla_ref}
+
+%\newpage
 
 \section{about the authors}
 \setlength\intextsep{0pt}
